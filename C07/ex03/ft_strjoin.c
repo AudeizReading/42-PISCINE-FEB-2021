@@ -45,7 +45,7 @@ void		ft_join(char *src1, char **src2, int nb_strs, char *tab)
 	int			j;
 	int			nb_chars;
 
-	*tab = '\0';
+	/**tab = '\0';*/
 	i = 0;
 	nb_chars = 0;
 	while (i < nb_strs)
@@ -70,7 +70,7 @@ char		*ft_strjoin(int size, char **strs, char *sep)
 
 	i = 0;
 	j = ft_size_2_join(strs, sep, &nb_strs);
-	if (size == 0)
+	if (size == 0 || j == 0)
 	{
 		tab = (char *)malloc(sizeof(char) * 0);
 		*tab = '\0';
@@ -80,3 +80,4 @@ char		*ft_strjoin(int size, char **strs, char *sep)
 	ft_join(sep, strs, nb_strs, tab);
 	return (tab);
 }
+/*Make a segfault like this, so to be continued */
