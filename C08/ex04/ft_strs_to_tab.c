@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <sys/errno.h>
 
-int		ft_strlen(char *str)
+void					ft_show_tab(struct s_stock_str *par);
+
+int						ft_strlen(char *str)
 {
 	int				len;
 
@@ -13,7 +15,7 @@ int		ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strdup(char *src)
+char					*ft_strdup(char *src)
 {
 	int				i;
 	int				size;
@@ -53,16 +55,10 @@ struct s_stock_str		*ft_strs_to_tab(int ac, char **av)
 
 int		main(int argc, char **argv)
 {
-	int				i;
 	t_stock_str		*tab;
 
 	tab = ft_strs_to_tab(argc, argv); 
-	i = 0;
-	while (i <= argc)
-	{
-		printf("tab[%d]:\n%s\n%d\n%s\n", i, tab[i].str, tab[i].size, tab[i].copy);
-		i++;
-	}
+	ft_show_tab(tab);
 	free(tab);
 	return (0);
 }
