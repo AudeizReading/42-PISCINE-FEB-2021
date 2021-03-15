@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
+#include "ex02/ft_abs.h"
 
 void	ft_putstr(char *str);
 
@@ -25,6 +26,7 @@ void	ft_putstr(char *str)
 
 int main(void)
 {
-	printf();
+	printf("ft_abs.h %d\n", ABS(-42));
+
 	return (0);
 }
